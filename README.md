@@ -23,7 +23,7 @@ El usuario puede ingresar el nombre de un personaje y recibir datos como su altu
 
 2. **Clonar el repositorio:**
    ```sh
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/brihuaa/P2-Web
    cd tu_repositorio
 
 ## Autores 
