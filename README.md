@@ -25,3 +25,7 @@ El usuario puede ingresar el nombre de un personaje y recibir datos como su altu
    ```sh
    git clone https://github.com/tu_usuario/tu_repositorio.git
    cd tu_repositorio
+
+## Autores 
+- **Adrián Brihuega Sánchez** 
+- **Johan Alexander Pulupa Romero** 
