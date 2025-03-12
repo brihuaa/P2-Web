@@ -18,19 +18,26 @@ interface Character {
 
 export const handler: Handlers<Character | null> = {
   async GET(req, ctx) {
-    const url = new URL(req.url);
-    const name = url.searchParams.get("name") || "";
-    const response = await fetch(
-      `https://swapi.dev/api/people/?search=${encodeURIComponent(name)}&format=json`
-    );
+    try {
+      const url = new URL(req.url);
+      const name = url.searchParams.get("name")?.trim() || "";
+      
+      if (!name) return ctx.render(null);
 
-    if (!response.ok) return ctx.render(null);
-
-    const data = await response.json();
-    return ctx.render(data.results[0] || null);
+      const response = await fetch(
+        `https://swapi.dev/api/people/?search=${encodeURIComponent(name)}&format=json`
+      );
+      
+      if (!response.ok) throw new Error("Error en la API");
+      
+      const data = await response.json();
+      return ctx.render(data.results[0] || null);
+      
+    } catch (error) {
+      return ctx.render(null);
+    }
   },
 };
-
 // Función para extraer el ID de un recurso (ej. /people/1/ => 1)
 const getResourceId = (url: string) =>
   url.split("/").slice(-2, -1)[0];
@@ -41,8 +48,8 @@ export default function CharacterPage({
   if (!data) {
     return (
       <div class="body3">
-        <div>
-          <div class= "emoji">😞</div>
+        <div class="error-container">
+          <div class="emoji">😞</div>
           <h1>Personaje no encontrado</h1>
           <p>Prueba con otro nombre, por ejemplo:</p>
           <div class="TextConstainersSquare">
@@ -50,8 +57,8 @@ export default function CharacterPage({
             <a href="/personaje?name=Vader">Vader</a>
             <a href="/personaje?name=R2">R2-D2</a>
           </div>
-          <div class= "TextConstainersSquare">          
-             <a href="/">Volver a buscar</a>
+          <div class="TextConstainersSquare">          
+            <a href="/" class="btn">Volver a buscar</a> {/* Botón estilizado */}
           </div>
         </div>
       </div>
