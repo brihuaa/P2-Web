@@ -40,17 +40,19 @@ export default function CharacterPage({
 }: PageProps<Character | null>) {
   if (!data) {
     return (
-      <div class="container">
+      <div class="body3">
         <div>
-          <div>😞</div>
+          <div class= "TextConstainersSquare">😞</div>
           <h1>Personaje no encontrado</h1>
           <p>Prueba con otro nombre, por ejemplo:</p>
-          <div>
+          <div class="TextConstainersSquare">
             <a href="/personaje?name=Luke">Luke</a>
             <a href="/personaje?name=Vader">Vader</a>
             <a href="/personaje?name=R2">R2-D2</a>
           </div>
-          <a href="/">Volver a buscar</a>
+          <div class= "TextConstainersSquare">          
+             <a href="/">Volver a buscar</a>
+          </div>
         </div>
       </div>
     );
@@ -66,7 +68,7 @@ export default function CharacterPage({
     <div class="container">
       <div>
         {/* Encabezado */}
-        <div>
+        <div class = "">
           <h1>{data.name}</h1>
           <a href="/">Nueva búsqueda</a>
         </div>
