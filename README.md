@@ -27,5 +27,5 @@ El usuario puede ingresar el nombre de un personaje y recibir datos como su altu
    cd tu_repositorio
 
 ## Autores 
-- **Adrián Brihuega Sánchez** 
-- **Johan Alexander Pulupa Romero** 
+- **Adrián Brihuega Sánchez - github.com/brihuaa** 
+- **Johan Alexander Pulupa Romero - github.com/DolceCola** 
