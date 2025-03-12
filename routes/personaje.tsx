@@ -42,7 +42,7 @@ export default function CharacterPage({
     return (
       <div class="body3">
         <div>
-          <div class= "TextConstainersSquare">😞</div>
+          <div class= "emoji">😞</div>
           <h1>Personaje no encontrado</h1>
           <p>Prueba con otro nombre, por ejemplo:</p>
           <div class="TextConstainersSquare">
